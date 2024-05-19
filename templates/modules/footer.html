@@ -11,6 +11,6 @@
       th:text="${theme.config.basic.iemo_icp_gov}"></a>
     </p>
     <p th:if="${theme.config.basic.iemo_upyun}">本站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank">
-      <img src="'.fileUri().'/assets/images/upyun.png" style="vertical-align: middle;height: 26px;margin-top: -3px;"></a>提供CDN加速/云存储服务</p>
+      <img th:src="@{/assets/images/upyun.png}" alt="又拍云" style="vertical-align: middle;height: 26px;margin-top: -3px;"></a>提供CDN加速/云存储服务</p>
   </div>
 </footer>
