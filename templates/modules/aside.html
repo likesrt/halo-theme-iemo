@@ -60,13 +60,13 @@
                         <li th:each="moment : ${momentFinder.listAll()}" th:with="content=${moment.spec.content}">
                             <div class="notes-content">
                                 <p th:utext="${content.raw}"></p>
+                                <a class="name" th:href="${'/moments'}"> </a>
                             </div>
-
                             <div class="notes-info">
                                 <div class="time">
                                     <span th:text="${#dates.format(moment.spec.releaseTime,'yyyy年MM月dd日')}"></span>
                                 </div>
-                                <a class="name" th:href="${'/moments'}"> </a>
+
                             </div>
 <!--?                            <div class="view-detail"><a th:href="${'/moments/'+moment.metadata.name}">查看详情</a>-->
 <!--?                            </div>-->
