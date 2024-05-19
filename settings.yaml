@@ -162,11 +162,3 @@ spec:
           name: iemo_toc
           label: 文章目录Toc
           value: true
-    - group: photos
-      label: 相册
-      formSchema:
-        - $formkit: text
-          name: title
-          label: 相册标题
-          value: "相册"
-          help: "相册标题"
