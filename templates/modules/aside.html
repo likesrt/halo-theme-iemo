@@ -57,7 +57,8 @@
                 <div class="notes-box">
                     <h2>说说 <span>Notes.</span></h2>
                     <ul>
-                        <li th:each="moment : ${momentFinder.listAll()}" th:with="content=${moment.spec.content}">
+                        <li th:each="moment : ${#lists.take(momentFinder.listAll(), 5)}"
+                            th:with="content=${moment.spec.content}">
                             <a th:href="@{/moments}">
                                 <div class="notes-content">
                                     <p th:utext="${content.raw}"></p>
@@ -72,6 +73,7 @@
                     </ul>
                 </div>
             </th:block>
+
 
         </div>
         <th:block th:replace="~{modules/inc/aside-sub-page}" />

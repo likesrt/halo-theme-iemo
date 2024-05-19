@@ -170,8 +170,3 @@ spec:
           label: 相册标题
           value: "相册"
           help: "相册标题"
-        - $formkit: text
-          name: description
-          label: 相册描述
-          value: "这里是相册描述"
-          help: "相册描述"
