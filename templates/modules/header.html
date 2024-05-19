@@ -1,6 +1,7 @@
 <header class="">
     <div class="logo">
-        <a href="/"><img th:src="${site.logo}" alt=""></a>
+
+        <a href="/"><img th:src="${site.logo}" alt="Logo" style= "border-radius: 25%;"/></a>
     </div>
     <div class="menu">
         <ul class="menu" th:with="topMenu = ${menuFinder.getPrimary()}">
