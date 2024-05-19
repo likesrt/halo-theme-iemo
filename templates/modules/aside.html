@@ -66,9 +66,10 @@
                                 <div class="time">
                                     <span th:text="${#dates.format(moment.spec.releaseTime,'yyyy年MM月dd日')}"></span>
                                 </div>
+                                <a class="name" th:href="${'/moments'}"> </a>
                             </div>
-                            <div class="view-detail"><a th:href="${'/moments/'+moment.metadata.name}">查看详情</a>
-                            </div>
+<!--?                            <div class="view-detail"><a th:href="${'/moments/'+moment.metadata.name}">查看详情</a>-->
+<!--?                            </div>-->
                         </li>
                     </ul>
                 </div>
