@@ -4,7 +4,7 @@
             <div class="author">
                 <div class="cover">
                     <img th:with="img = ${#strings.isEmpty(theme.config.sidebar.iemo_cover_author) ? '/themes/theme-iemo/assets/images/cover-author.jpg' : theme.config.sidebar.iemo_cover_author}"
-                        th:src="${img}" alt="">
+                         th:src="${img}" alt="">
                 </div>
                 <div class="author-info">
                     <div class="avatar">
@@ -22,7 +22,7 @@
                             <span th:text="${tags.size}"></span>
                         </div>
                         <div class="notes" th:if="${pluginFinder.available('PluginMoments')}"
-                            th:with=" moment = ${momentFinder.listAll()}">
+                             th:with=" moment = ${momentFinder.listAll()}">
                             <i>说说</i>
                             <span th:text="${moment.size()}"></span>
                         </div>
@@ -38,14 +38,14 @@
                 </div>
             </th:block>
             <th:block th:if="${not #lists.isEmpty(theme.config.sidebar.socialMedia)}"
-                th:with="socialMedias = ${theme.config.sidebar.socialMedia}">
+                      th:with="socialMedias = ${theme.config.sidebar.socialMedia}">
                 <div class="social">
                     <h2>社交 <span>Social.</span></h2>
                     <div class="social-content">
                         <ul class="menu">
                             <li class="menu-item" th:each="socialMedia : ${socialMedias}">
                                 <a th:title="${socialMedia.name}" target="_blank" rel="noopener"
-                                    th:href="${socialMedia.url}">
+                                   th:href="${socialMedia.url}">
                                     <span th:class="${socialMedia.icon}"></span>
                                 </a>
                             </li>
@@ -57,8 +57,7 @@
                 <div class="notes-box">
                     <h2>说说 <span>Notes.</span></h2>
                     <ul>
-                        <li th:each="moment : ${#lists.subList(momentFinder.listAll(), 0, 5)}"
-                            th:with="content=${moment.spec.content}">
+                        <li th:each="moment : ${momentFinder.listAll()}" th:with="content=${moment.spec.content}">
                             <a th:href="@{/moments}">
                                 <div class="notes-content">
                                     <p th:utext="${content.raw}"></p>
@@ -73,10 +72,24 @@
                     </ul>
                 </div>
             </th:block>
+            <script>
+                // 在页面加载完成后执行
+                document.addEventListener("DOMContentLoaded", function () {
+                    // 获取所有的说说元素
+                    var moments = document.querySelectorAll(".notes-box li");
+
+                    // 如果说说数量超过5条，隐藏多余的元素
+                    if (moments.length > 5) {
+                        for (var i = 5; i < moments.length; i++) {
+                            moments[i].style.display = "none";
+                        }
+                    }
+                });
+            </script>
 
 
         </div>
-        <th:block th:replace="~{modules/inc/aside-sub-page}" />
+        <th:block th:replace="~{modules/inc/aside-sub-page}"/>
     </div>
-    <th:block th:replace="~{modules/footer}" />
+    <th:block th:replace="~{modules/footer}"/>
 </aside>
