@@ -81,7 +81,12 @@ spec:
         - $formkit: checkbox
           name: iemo_upyun
           label: 又拍云联盟
-          value: false          
+          value: false
+        - $formkit: menuRadio
+          name: menu
+          label: 菜单
+          value: ""
+          help: "选择要显示的菜单，注：只显示一级菜单"
 
     - group: sidebar
       label: 侧栏
