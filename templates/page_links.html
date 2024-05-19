@@ -17,6 +17,7 @@
             <div class="content" th:with="groups = ${linkFinder.groupBy()}">
                 <article>
                     <h2>友人帐 <span>Friends.</span></h2>
+                    <a href="/linksaf" class="btn">申请友情链接</a>
                     <div class="link-box">
                         <ul>
                             <th:block th:each="group,iterStat : ${groups}">
@@ -44,6 +45,7 @@
 <!--?                    <th:block-->
 <!--?                        th:replace="~{modules/inc/halo-comment :: halo-comment(name=${singlePage.metadata.name},kind='SinglePage',group='content.halo.run')}">-->
 <!--?                    </th:block>-->
+
                 </article>
                 <th:block th:replace="~{modules/aside}" />
             </div>
