@@ -31,6 +31,25 @@
                 <div th:if="${theme.config.sidebar.iemo_aside_subpage}" class="aside-btn-open">查看更多<i
                         class="iconfont icon-chevron-right"></i></div>
             </div>
+<!--?            增加一个申请友链的按钮 -->
+            <div class="aside-btn-apply">
+                <a href="/linksaf" target="_blank" rel="noopener">申请友链</a>
+            </div>
+            <style>
+               .aside-btn-apply{
+                    text-align: center;
+                    margin-top: 10px;
+                }
+               .aside-btn-apply a{
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #007bff;
+                    color: #fff;
+                    border-radius: 5px;
+                    text-decoration: none;
+                }
+            </style>
+
             <th:block th:if="${theme.config.post.iemo_toc}">
                 <div class="toc">
                     <h2>目录 <span>Toc.</span></h2>
