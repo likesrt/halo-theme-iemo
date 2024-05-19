@@ -58,22 +58,21 @@
                     <h2>说说 <span>Notes.</span></h2>
                     <ul>
                         <li th:each="moment : ${momentFinder.listAll()}" th:with="content=${moment.spec.content}">
-                            <div class="notes-content">
-                                <p th:utext="${content.raw}"></p>
-                                <a class="name" th:href="${'/moments'}"> </a>
-                            </div>
-                            <div class="notes-info">
-                                <div class="time">
-                                    <span th:text="${#dates.format(moment.spec.releaseTime,'yyyy年MM月dd日')}"></span>
+                            <a th:href="@{/moments}">
+                                <div class="notes-content">
+                                    <p th:utext="${content.raw}"></p>
                                 </div>
-
-                            </div>
-<!--?                            <div class="view-detail"><a th:href="${'/moments/'+moment.metadata.name}">查看详情</a>-->
-<!--?                            </div>-->
+                                <div class="notes-info">
+                                    <div class="time">
+                                        <span th:text="${#dates.format(moment.spec.releaseTime,'yyyy年MM月dd日')}"></span>
+                                    </div>
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </th:block>
+
         </div>
         <th:block th:replace="~{modules/inc/aside-sub-page}" />
     </div>
