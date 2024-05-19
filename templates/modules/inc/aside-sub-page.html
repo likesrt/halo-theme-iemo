@@ -16,7 +16,7 @@
     </div>
 
 
-    <th:block th:with="leftMenu = ${#strings.isEmpty(theme.config.leftSidebar.menu) ? menuFinder.getPrimary() : menuFinder.getByName(theme.config.leftSidebar.menu)}">
+    <th:block th:with="leftMenu = ${#strings.isEmpty(theme.config.basic.menu) ? menuFinder.getPrimary() : menuFinder.getByName(theme.config.basic.menu)}">
         <div class="menu_sidebar_box" th:if="${not #lists.isEmpty(leftMenu)}">
             <h2>菜单 <span>Menus.</span></h2>
             <div class="menu_sidebar">
