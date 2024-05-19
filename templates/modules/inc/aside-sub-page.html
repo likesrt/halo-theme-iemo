@@ -14,8 +14,7 @@
         </div>
         <div class="aside-btn-close"><i class="iconfont icon-chevron-left"></i>返回</div>
     </div>
-
-    <th:block th:with="leftMenu = ${menuFinder.getByName(menu-AyBdi)}">
+    <th:block th:with="leftMenu = ${menuFinder.getPrimary()}">
         <div class="menu_sidebar_box" th:if="${not #lists.isEmpty(leftMenu)}">
             <h2>菜单 <span>Menus.</span></h2>
             <div class="menu_sidebar">
