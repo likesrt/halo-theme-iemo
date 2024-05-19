@@ -82,12 +82,6 @@ spec:
           name: iemo_upyun
           label: 又拍云联盟
           value: false
-        - $formkit: menuRadio
-          name: menu
-          label: 菜单
-          value: ""
-          help: "选择要显示的菜单，注：只显示一级菜单"
-
     - group: sidebar
       label: 侧栏
       formSchema:
@@ -168,5 +162,16 @@ spec:
           name: iemo_toc
           label: 文章目录Toc
           value: true
-        
-    
+    - group: photos
+      label: 相册
+      formSchema:
+        - $formkit: text
+          name: title
+          label: 相册标题
+          value: "相册"
+          help: "相册标题"
+        - $formkit: text
+          name: description
+          label: 相册描述
+          value: "这里是相册描述"
+          help: "相册描述"

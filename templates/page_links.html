@@ -17,11 +17,6 @@
             <div class="content" th:with="groups = ${linkFinder.groupBy()}">
                 <article>
                     <h2>友人帐 <span>Friends.</span></h2>
-                    <div class="single">
-                        <div class="post-content">
-                            <th:block th:utext="${singlePage.content.content}"></th:block>
-                        </div>
-                    </div>
                     <div class="link-box">
                         <ul>
                             <th:block th:each="group,iterStat : ${groups}">
@@ -39,6 +34,13 @@
                             </th:block>
                         </ul>
                     </div>
+
+                    <div class="single">
+                        <div class="post-content">
+                            <th:block th:utext="${singlePage.content.content}"></th:block>
+                        </div>
+                    </div>
+
                     <th:block
                         th:replace="~{modules/inc/halo-comment :: halo-comment(name=${singlePage.metadata.name},kind='SinglePage',group='content.halo.run')}">
                     </th:block>
