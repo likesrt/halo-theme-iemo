@@ -57,7 +57,7 @@
                 <div class="notes-box">
                     <h2>说说 <span>Notes.</span></h2>
                     <ul>
-                        <li th:each="moment : ${#lists.take(momentFinder.listAll(), 5)}"
+                        <li th:each="moment : ${#lists.subList(momentFinder.listAll(), 0, 5)}"
                             th:with="content=${moment.spec.content}">
                             <a th:href="@{/moments}">
                                 <div class="notes-content">
